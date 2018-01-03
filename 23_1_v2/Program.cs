@@ -6,22 +6,30 @@ namespace _23_1_v2
     {
         public static void Wrate(string i)
         {
-            Console.WriteLine(i);
+            Console.WriteLine("Минимальная слово: {0}\n",i);
         }
     }
 
     internal class A
     {
         private string str; // компоненты данные
-
+        private int k;
+        
         public A()
         {  // конструктор по умолчанию
             this.str = "NULL";
         }
 
-        public A(string s) // конструктор с параметрами;
+        public A(string s, int i) // конструктор с параметрами;
         {
+            k = i;
             this.str = s;
+        }
+
+        ~A ()
+        {
+            Console.WriteLine("{0} обьект класса А уничтожен",k+1);
+            Console.ReadKey();
         }
 
         public A(A a) // конструктор копирования;
@@ -77,11 +85,13 @@ namespace _23_1_v2
         {
             Console.Write("Введите строку: ");
             string input = Console.ReadLine();
-            A a = new A(input);
+            A a = new A(input,1);
             A a2 = new A(a);
+            //A a3 = new A(a);
             B b = new B(a2.getString());
             MyFunctions.Wrate(b.getMinWord());
-            Console.ReadLine();
+
         }
     }
+  
 }
