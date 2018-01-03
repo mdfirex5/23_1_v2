@@ -1,26 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace _23_1_v2
 {
     public static class MyFunctions
     {
-        
         public static void Wrate(string i)
         {
-
             Console.WriteLine(i);
         }
     }
-    class A
+
+    internal class A
     {
         private string str; // компоненты данные
 
-        public A () {  // конструктор по умолчанию
+        public A()
+        {  // конструктор по умолчанию
             this.str = "NULL";
-            
         }
 
         public A(string s) // конструктор с параметрами;
@@ -33,27 +29,26 @@ namespace _23_1_v2
             this.str = a.str;
         }
 
-       
         public string getString()
         {
             return this.str;
         }
-
     }
 
-    class B
+    internal class B
     {
         private string str;
+
         public B()
         {
             this.str = "Null";
         }
+
         public B(string s)
         {
             this.str = s;
         }
 
-       
         public string getString() //method
         {
             return this.str;
@@ -71,16 +66,15 @@ namespace _23_1_v2
                     index = i;
                 }
             }
-           
+
             return str[index];
         }
     }
 
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-           
             Console.Write("Введите строку: ");
             string input = Console.ReadLine();
             A a = new A(input);
@@ -91,5 +85,3 @@ namespace _23_1_v2
         }
     }
 }
-
-
